@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .continer{
+        background-color: #b31b5a;
+        padding: 70px;
+       
+    }
+   #labelcounter {
+  background-color: blue;
+  padding: 40px;
+  margin: 60px;
+  color: #fff;
+  border-radius: 10px;
+    }
+    #decreaseBtn{
+        background-color: blueviolet;
+        padding: 30px;
+        border-radius: 4px;
+    }
+  
+</style>
+<body>
+    <div class="continer">
+        <label id="labelcounter">0</label>
+        <button id="increaseBtn">increase</button>
+        <button id="decreaseBtn">decrease</button>
+        <button id="resetBtn">reset</button>
+    </div>
+    <script>
+        let count =0;
+        document.getElementById("increaseBtn").onclick =function(){
+            count +=1
+            document.getElementById("labelcounter").innerHTML =count
+        }
+        document.getElementById("decreaseBtn").onclick =function(){
+
+            document.getElementById("labelcounter").innerHTML =count
+            count -=1
+             if(count ==0){
+                document.getElementById("decreaseBtn").onclick =function(){
+
+             document.getElementById("labelcounter").innerHTML =count
+                 count =0
+                      if(count ==0){
+                alert("this is 0 ")
+             }
+
+              
+             }
+        
+        }}
+        document.getElementById("resetBtn").onclick =function(){
+            document.getElementById("labelcounter").innerHTML =count
+            count =0
+            
+        }
+      
+    </script>
+</body>
+</html>
